@@ -88,6 +88,7 @@ In Class October 7th
    - Primary color
    - Secondary Color
    - Dropdown Option
+   - Type
 
 #### What we'll do next
 - Individual work researching components
