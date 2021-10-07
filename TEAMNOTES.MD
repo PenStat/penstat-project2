@@ -49,9 +49,9 @@ This is for maintaining communication about your team's working meetings to "shi
   - Title Text
 - What should we call each of them?
   - penguin-icon
-  - penguin-heading
+  - penguin-state-card
   - penguin-body
-  - penguin-feet
+  - penguin-card
 
 
 ## Meeting notes
