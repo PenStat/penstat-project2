@@ -55,14 +55,44 @@ This is for maintaining communication about your team's working meetings to "shi
 
 
 ## Meeting notes
-These are notes to be maintained PER date that you meet. What you did and what the next steps are
 ### Meeting Date
-
+In Class October 7th
 #### What we did:
-
+ - Decided names for card components
+   - card-icon
+   - card-header
+   - card-frame
+   - learning-card
+ - Assigned components to members
+   - Pooja = Icon
+   - Griffin = Frame
+   - Elizabeth = Header
+   - Jonah = Card
+ - Icon properties
+   - Color
+   - Size
+   - Icon-img
+ - Header properties
+   - Main Header
+   - Sub Header
+   - Font details (Font family, decoration, size, etc)
+   - Color
+ - Frame properties
+   - Size
+   - Color
+   - Slot
+   - Dropdown option
+   - Outline
+ - Card properties
+   - Size
+   - Primary color
+   - Secondary Color
+   - Dropdown Option
 
 #### What we'll do next
-
+- Individual work researching components
+- Start light development
+- Look into simple-colors
 
 ## Status check ins
 These are dedicated status check-ins as this is a multi-week project
