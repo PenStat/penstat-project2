@@ -159,3 +159,5 @@ export class CardFrame extends LitElement {
     };
   }
 }
+
+customElements.define(CardFrame.tag, CardFrame);

@@ -1,8 +1,8 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import { CardHeader } from './CardHeader.js';
-import { CardIcon } from './CardIcon.js';
-import { CardFrame } from './CardFrame.js';
+import './CardHeader.js';
+import './CardIcon.js';
+import './CardFrame.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -104,9 +104,10 @@ export class LearningCard extends LitElement {
         <slot></slot>
       </div>
     </div>
-      <Card-Icon></Card-Icon>
-      <Card-Header></Card-Header>
-      <Card-Frame></Card-Frame>
+
+      <card-icon></card-icon>
+      <card-header></card-header>
+      <card-frame></card-frame>
 
     `;
   }

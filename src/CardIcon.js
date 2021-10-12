@@ -42,7 +42,6 @@ export class CardIcon extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
-
     `;
   }
 
@@ -89,3 +88,4 @@ export class CardIcon extends LitElement {
     };
   }
 }
+customElements.define(CardIcon.tag, CardIcon);
