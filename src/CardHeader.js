@@ -5,7 +5,6 @@ export class CardHeader extends LitElement {
     return 'card-header';
   }
 
-
   constructor() {
     super();
   }
@@ -43,7 +42,14 @@ export class CardHeader extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
-
+    <div class = "slot-wrapper">
+        <div data-label = "Header" data-layout-slotname = "header">
+            <slot name = "header"></slot>
+        </div>
+        <div data-label = "SubHeader" data-layout-slotname = "subheader">
+            <slot name = "subheader"></slot>
+        </div>
+    </div>
     `;
   }
 
