@@ -96,3 +96,5 @@ export class CardHeader extends LitElement {
     };
   }
 }
+
+customElements.define(CardHeader.tag, CardHeader);
