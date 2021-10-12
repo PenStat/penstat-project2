@@ -1,5 +1,8 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
+import { CardHeader } from './CardHeader.js';
+import { CardIcon } from './CardIcon.js';
+import { CardFrame } from './CardFrame.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -16,12 +19,14 @@ export class LearningCard extends LitElement {
   static get tag() {
     return "learning-card";
   }
+
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
     this.myIcon = null;
     this.type = 'math';
   }
+
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
   static get properties() {
     return {
@@ -32,6 +37,7 @@ export class LearningCard extends LitElement {
       myIcon: { type: String, attribute: "my-icon" },
     };
   }
+
   // updated fires every time a property defined above changes
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
@@ -41,6 +47,7 @@ export class LearningCard extends LitElement {
       }
     });
   }
+
   // Lit life-cycle; this fires the 1st time the element is rendered on the screen
   // this is a sign it is safe to make calls to this.shadowRoot
   firstUpdated(changedProperties) {
@@ -48,16 +55,19 @@ export class LearningCard extends LitElement {
       super.firstUpdated(changedProperties);
     }
   }
+
   // HTMLElement life-cycle, element has been connected to the page / added or moved
   // this fires EVERY time the element is moved
   connectedCallback() {
     super.connectedCallback();
   }
+
   // HTMLElement life-cycle, element has been removed from the page OR moved
   // this fires every time the element moves
   disconnectedCallback() {
     super.disconnectedCallback();
   }
+
   // CSS - specific to Lit
   static get styles() {
     return css`
@@ -76,6 +86,7 @@ export class LearningCard extends LitElement {
       }
     `;
   }
+
   // HTML - specific to Lit
   render() {
     return html`
@@ -86,15 +97,20 @@ export class LearningCard extends LitElement {
         <slot name="header"></slot>
       </div>
       <img part="icon" src="${beaker}" alt=""/>
-      <img part="icon" src="${lightbulb}" />
+      <img part="icon" src="${lightbulb}" alt=''/>
       <img part="icon" src="${question}" alt=""/>
       <div class="slot-wrapper" data-label="Content" data-layout-slotname="content">
         <slot name="content"></slot>
         <slot></slot>
       </div>
     </div>
+      <Card-Icon></Card-Icon>
+      <Card-Header></Card-Header>
+      <Card-Frame></Card-Frame>
+
     `;
   }
+
   // HAX specific callback
   // This teaches HAX how to edit and work with your web component
   /**
