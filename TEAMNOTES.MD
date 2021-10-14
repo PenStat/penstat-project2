@@ -102,7 +102,6 @@ In Class October 14th
   - Jonah
   - Griffin
   - Pooja
-  - Elizabeth
 
 #### What we'll do next
 -
