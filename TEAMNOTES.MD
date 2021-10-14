@@ -108,6 +108,16 @@ In Class October 14th
     - Building from LearningCard at first, then decided to create custom elements
   - Griffin
   - Pooja
+- Take Aways
+  - Fish
+  - Phish
+  - Similar structure across teams
+- Learn from others
+  - Similar naming and components
+  - This man likes to fish a lot
+- Next Steps
+  - Fully implement Simple Colors
+  - WOrk Towards check in
 
 #### What we'll do next
 - Work towards Sunday check-in
