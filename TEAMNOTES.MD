@@ -95,13 +95,25 @@ In Class October 7th
 - Start light development
 - Look into simple-colors
 
+### Meeting Date
+In Class October 14th
+#### What we did:
+- Meeting with other teams
+  - Jonah
+  - Griffin
+  - Pooja
+  - Elizabeth
+
+#### What we'll do next
+-
+
 ## Status check ins
 These are dedicated status check-ins as this is a multi-week project
 ### Check-in 1
--
--
+- Basic project set up and running
+- Started working on individual elements
 ### Check-in 2
--
+- Components gutted for development
 -
 ### Check-in 3
 -
