@@ -43,52 +43,6 @@ export class CardFrame extends LitElement {
       </div>
     `;
   }
-
-  // HAX specific callback
-  // This teaches HAX how to edit and work with your web component
-  /**
-   * haxProperties integration via file reference
-   */
-  static get haxProperties() {
-    return {
-      canScale: false,
-      canPosition: false,
-      canEditSource: true,
-      contentEditable: true,
-      gizmo: {
-        title: 'Learning Card',
-        description: 'An element that you have to replace / fix / improve',
-        icon: 'credit-card',
-        color: 'blue',
-        groups: ['Content', 'Presentation', 'Education'],
-      },
-      settings: {
-        configure: [
-          {
-            property: 'type',
-            title: 'Type',
-            description: 'Identifies the card',
-            inputMethod: 'select',
-            options: {
-              science: 'Science',
-              math: 'Math',
-            },
-          },
-        ],
-        advanced: [],
-      },
-      demoSchema: [
-        {
-          tag: CardFrame.tag,
-          properties: {
-            type: 'science',
-          },
-          content:
-            "<p slot='header'>This tag renders in the header</p><ul><li>This renders</li><li>Below the tag</li></ul>",
-        },
-      ],
-    };
-  }
 }
 
-window.customElements.define(CardFrame.tag, CardFrame);
+customElements.define(CardFrame.tag, CardFrame);

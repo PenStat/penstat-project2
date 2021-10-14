@@ -95,13 +95,36 @@ In Class October 7th
 - Start light development
 - Look into simple-colors
 
+### Meeting Date
+In Class October 14th
+#### What we did:
+- Meeting with other teams
+  - Jonah
+    - All working on different parts/ working in different ways
+    - Fishing
+    - Elements consistent across groups
+      - Header/banner, Icon, Body, Scaffolding
+    - All working towards Check in 2
+    - Building from LearningCard at first, then decided to create custom elements
+  - Griffin
+    - Someone is working on a different card design? Are we allowed to do that?
+    - Making a card from scratch then breaking it down into parts
+    - How to design the "reveal" content part of the card
+  - Pooja
+    - Dividing all the parts / work up 
+    - Trying to implement SimpleColors
+    - Other groups making different card designs?
+
+#### What we'll do next
+- Work towards Sunday check-in
+
 ## Status check ins
 These are dedicated status check-ins as this is a multi-week project
 ### Check-in 1
--
--
+- Basic project set up and running
+- Started working on individual elements
 ### Check-in 2
--
+- Components gutted for development
 -
 ### Check-in 3
 -
