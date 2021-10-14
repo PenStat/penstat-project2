@@ -5,17 +5,16 @@ export class CardIcon extends LitElement {
     return 'card-icon';
   }
 
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   static get properties() {
-    return {
-    };
+    return {};
   }
 
-  updated(changedProperties) {
-  }
+  // updated(changedProperties) {
+  // }
 
   firstUpdated(changedProperties) {
     if (super.firstUpdated) {
@@ -41,8 +40,7 @@ export class CardIcon extends LitElement {
 
   // HTML - specific to Lit
   render() {
-    return html`
-    `;
+    return html``;
   }
 
   // HAX specific callback
@@ -70,8 +68,7 @@ export class CardIcon extends LitElement {
             title: '',
             description: '',
             inputMethod: '',
-            options: {
-            },
+            options: {},
           },
         ],
         advanced: [],
@@ -79,10 +76,8 @@ export class CardIcon extends LitElement {
       demoSchema: [
         {
           tag: CardIcon.tag,
-          properties: {
-          },
-          content:
-            "",
+          properties: {},
+          content: '',
         },
       ],
     };

@@ -107,7 +107,13 @@ In Class October 14th
     - All working towards Check in 2
     - Building from LearningCard at first, then decided to create custom elements
   - Griffin
+    - Someone is working on a different card design? Are we allowed to do that?
+    - Making a card from scratch then breaking it down into parts
+    - How to design the "reveal" content part of the card
   - Pooja
+    - Dividing all the parts / work up 
+    - Trying to implement SimpleColors
+    - Other groups making different card designs?
 
 #### What we'll do next
 - Work towards Sunday check-in
