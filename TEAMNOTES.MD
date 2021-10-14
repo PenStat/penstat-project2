@@ -100,11 +100,17 @@ In Class October 14th
 #### What we did:
 - Meeting with other teams
   - Jonah
+    - All working on different parts/ working in different ways
+    - Fishing
+    - Elements consistent across groups
+      - Header/banner, Icon, Body, Scaffolding
+    - All working towards Check in 2
+    - Building from LearningCard at first, then decided to create custom elements
   - Griffin
   - Pooja
 
 #### What we'll do next
--
+- Work towards Sunday check-in
 
 ## Status check ins
 These are dedicated status check-ins as this is a multi-week project

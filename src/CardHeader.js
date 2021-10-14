@@ -5,7 +5,6 @@ export class CardHeader extends LitElement {
     return 'card-header';
   }
 
-
   constructor() {
     super();
   }
@@ -47,48 +46,6 @@ export class CardHeader extends LitElement {
     `;
   }
 
-  // HAX specific callback
-  // This teaches HAX how to edit and work with your web component
-  /**
-   * haxProperties integration via file reference
-   */
-  static get haxProperties() {
-    return {
-      canScale: false,
-      canPosition: false,
-      canEditSource: true,
-      contentEditable: true,
-      gizmo: {
-        title: '',
-        description: '',
-        icon: '',
-        color: '',
-        groups: [],
-      },
-      settings: {
-        configure: [
-          {
-            property: '',
-            title: '',
-            description: '',
-            inputMethod: '',
-            options: {
-            },
-          },
-        ],
-        advanced: [],
-      },
-      demoSchema: [
-        {
-          tag: CardHeader.tag,
-          properties: {
-          },
-          content:
-            "",
-        },
-      ],
-    };
-  }
 }
 
 customElements.define(CardHeader.tag, CardHeader);
