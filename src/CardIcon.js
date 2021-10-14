@@ -76,9 +76,12 @@ export class CardIcon extends SimpleColors {
   // HTML - specific to Lit
   render() {
     return html`
+<<<<<<< HEAD
       <div class="outline">
         <img href=${beaker} />
       </div>
+=======
+>>>>>>> 1ce67e4bb94f43454c4ca2513ac30978f0f9f511
     `;
   }
 
@@ -128,4 +131,8 @@ export class CardIcon extends SimpleColors {
     };
   }
 }
+<<<<<<< HEAD
 window.customElements.define(CardIcon.tag, CardIcon);
+=======
+customElements.define(CardIcon.tag, CardIcon);
+>>>>>>> 1ce67e4bb94f43454c4ca2513ac30978f0f9f511
