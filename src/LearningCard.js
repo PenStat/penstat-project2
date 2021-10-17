@@ -115,7 +115,8 @@ export class LearningCard extends LitElement {
 
       <card-icon></card-icon>
       <card-header></card-header>
-      <card-frame></card-frame>
+      <card-frame>
+      </card-frame>
     `;
   }
 
