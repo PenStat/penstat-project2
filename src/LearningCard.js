@@ -1,8 +1,5 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import './CardHeader.js';
-import './CardIcon.js';
-import './CardFrame.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -25,6 +22,11 @@ export class LearningCard extends LitElement {
     super();
     this.myIcon = null;
     this.type = 'math';
+    setTimeout(() => {
+      import('./CardHeader.js');
+      import('./CardIcon.js');
+      import('./CardFrame.js');
+    }, 0);
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle

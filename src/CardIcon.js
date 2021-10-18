@@ -5,9 +5,10 @@ export class CardIcon extends LitElement {
     return 'card-icon';
   }
 
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+
+  }
 
   static get properties() {
     return {};
