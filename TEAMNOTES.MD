@@ -121,7 +121,7 @@ In Class October 14th
 - Next Steps
   - Fully implement Simple Colors
   - WOrk Towards check in
-    - Dividing all the parts / work up 
+    - Dividing all the parts / work up
     - Trying to implement SimpleColors
     - Other groups making different card designs?
 
@@ -135,7 +135,10 @@ These are dedicated status check-ins as this is a multi-week project
 - Started working on individual elements
 ### Check-in 2
 - Components gutted for development
--
+- Icon should have a basic API to render the icon based on having the correct name leveraged
+- Header / banner element should have a basic API supporting two named slots and implementing your icon
+- Your icon definition should be dynamically imported in the constructor or firstUpdated life-cycle of the header / banner element (reading and examples before should help inform this)
+  - It is for the main card.
 ### Check-in 3
 -
 -

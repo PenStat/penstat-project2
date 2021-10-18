@@ -1,12 +1,14 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
 
-export class CardIcon extends LitElement {
+export class CardIcon extends SimpleColors {
   static get tag() {
     return 'card-icon';
   }
 
   // constructor() {
   //   super();
+
   // }
 
   static get properties() {
@@ -31,11 +33,14 @@ export class CardIcon extends LitElement {
   }
 
   static get styles() {
-    return css`
-      :host {
-        display: block;
-      }
-    `;
+    return [
+      ...super.styles,
+      css`
+        :host {
+          display: block;
+        }
+      `,
+    ];
   }
 
   // HTML - specific to Lit
