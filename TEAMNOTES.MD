@@ -111,6 +111,16 @@ In Class October 14th
     - Making a card from scratch then breaking it down into parts
     - How to design the "reveal" content part of the card
   - Pooja
+- Take Aways
+  - Fish
+  - Phish
+  - Similar structure across teams
+- Learn from others
+  - Similar naming and components
+  - This man likes to fish a lot
+- Next Steps
+  - Fully implement Simple Colors
+  - WOrk Towards check in
     - Dividing all the parts / work up 
     - Trying to implement SimpleColors
     - Other groups making different card designs?
