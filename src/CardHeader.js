@@ -5,17 +5,16 @@ export class CardHeader extends LitElement {
     return 'card-header';
   }
 
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   static get properties() {
-    return {
-    };
+    return {};
   }
 
-  updated(changedProperties) {
-  }
+  // updated(changedProperties) {
+  // }
 
   firstUpdated(changedProperties) {
     if (super.firstUpdated) {
@@ -42,10 +41,16 @@ export class CardHeader extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
-
+      <div class="slot-wrapper">
+        <div data-label="Header" data-layout-slotname="header">
+          <slot name="header"></slot>
+        </div>
+        <div data-label="SubHeader" data-layout-slotname="subheader">
+          <slot name="subheader"></slot>
+        </div>
+      </div>
     `;
   }
-
 }
 
 customElements.define(CardHeader.tag, CardHeader);
