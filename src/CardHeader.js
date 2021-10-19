@@ -6,16 +6,29 @@ export class CardHeader extends SimpleColors {
     return 'card-header';
   }
 
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+    this.type = 'objective';
+    this.icon = 'lightbulb';
+  }
 
   static get properties() {
     return {};
   }
 
-  // updated(changedProperties) {
-  // }
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'type' && this[propName] === 'objective') {
+        this.icon = 'lightbulb';
+      }
+      if (propName === 'type' && this[propName] === 'science') {
+        this.icon = 'beaker';
+      }
+      if (propName === 'type' && this[propName] === 'question') {
+        this.icon = 'question';
+      }
+    });
+  }
 
   firstUpdated(changedProperties) {
     if (super.firstUpdated) {
@@ -45,11 +58,10 @@ export class CardHeader extends SimpleColors {
   // HTML - specific to Lit
   render() {
     return html`
-      <div class="slot-wrapper">
-        <div data-label="Header" data-layout-slotname="header">
+      <div class="banner-wrapper">
+        <card-icon icon="${this.icon}"></card-icon>
+        <div class="header-wrapper">
           <slot name="header"></slot>
-        </div>
-        <div data-label="SubHeader" data-layout-slotname="subheader">
           <slot name="subheader"></slot>
         </div>
       </div>

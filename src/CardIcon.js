@@ -1,6 +1,10 @@
 import { html, css } from 'lit';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
 
+const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
+const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
+const question = new URL('../assets/question.svg', import.meta.url).href;
+
 export class CardIcon extends SimpleColors {
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -17,22 +21,37 @@ const question = new URL('../assets/question.svg', import.meta.url).href;
     return 'card-icon';
   }
 
-  // constructor() {
-  //   super();
-
-  // }
+  constructor() {
+    super();
+    this.icon = lightbulb;
+    this.altText = 'A lightbulb icon';
+  }
 
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
   static get properties() {
-    return {};
+    return {
+      icon: { type: String },
+    };
   }
 
-  // updated(changedProperties) {
-  // }
-  //  return {
 
-    };
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'icon' && this[propName] === 'beaker') {
+        this.icon = beaker;
+        this.altText = 'A beaker icon';
+      }
+      if (propName === 'icon' && this[propName] === 'lightbulb') {
+        this.icon = lightbulb;
+        this.altText = 'A lightbulb icon';
+      }
+      if (propName === 'icon' && this[propName] === 'question') {
+        this.icon = question;
+        this.altText = 'A question mark icon';
+      }
+    });
+
   }
 
   
@@ -61,18 +80,30 @@ const question = new URL('../assets/question.svg', import.meta.url).href;
   static get styles() {
     return [...super.styles,
       css`
-      :host {
-        display: block;
-        background-color: var(--simple-colors-default-theme-accent-8);
-        color: var(--simple-color-default-theme-grey-1);
-      }
-      `
+        :host {
+          display: block;
+        }
+        div {
+          corner-radius: 100%;
+          background-color: var(--simple-colors-default-theme-grey-6);
+          height: 200px;
+          width: 200px;
+        }
+        img {
+          height: 200px;
+          width: auto;
+        }
+      `,
     ];
   }
 
   // HTML - specific to Lit
   render() {
-    return html``;
+    return html`
+      <div>
+        <img src="${this.icon}" alt="${this.altText}" />
+      </div>
+    `;
   }
 
   // HAX specific callback
