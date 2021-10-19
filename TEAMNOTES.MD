@@ -107,7 +107,23 @@ In Class October 14th
     - All working towards Check in 2
     - Building from LearningCard at first, then decided to create custom elements
   - Griffin
+    - Someone is working on a different card design? Are we allowed to do that?
+    - Making a card from scratch then breaking it down into parts
+    - How to design the "reveal" content part of the card
   - Pooja
+- Take Aways
+  - Fish
+  - Phish
+  - Similar structure across teams
+- Learn from others
+  - Similar naming and components
+  - This man likes to fish a lot
+- Next Steps
+  - Fully implement Simple Colors
+  - WOrk Towards check in
+    - Dividing all the parts / work up
+    - Trying to implement SimpleColors
+    - Other groups making different card designs?
 
 #### What we'll do next
 - Work towards Sunday check-in
@@ -119,7 +135,10 @@ These are dedicated status check-ins as this is a multi-week project
 - Started working on individual elements
 ### Check-in 2
 - Components gutted for development
--
+- Icon should have a basic API to render the icon based on having the correct name leveraged
+- Header / banner element should have a basic API supporting two named slots and implementing your icon
+- Your icon definition should be dynamically imported in the constructor or firstUpdated life-cycle of the header / banner element (reading and examples before should help inform this)
+  - It is for the main card.
 ### Check-in 3
 -
 -

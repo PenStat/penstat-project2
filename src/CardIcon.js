@@ -1,7 +1,7 @@
-// dependencies / things imported
-import { LitElement, html, css } from 'lit';
-import { SimpleColors } from "@lrnwebcomponents/simple-colors/simple-colors.js";
+import { html, css } from 'lit';
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
 
+export class CardIcon extends SimpleColors {
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
 // on github pages, or when people reuse assets outside your elements in production
@@ -12,33 +12,30 @@ const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
 const question = new URL('../assets/question.svg', import.meta.url).href;
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
-export class CardIcon extends SimpleColors {
   // a convention I enjoy so you can change the tag name in 1 place
   static get tag() {
     return 'card-icon';
   }
 
-  // HTMLElement life-cycle, built in; use this for setting defaults
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+
+  // }
+
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
   static get properties() {
-    return {
+    return {};
+  }
+
+  // updated(changedProperties) {
+  // }
+  //  return {
 
     };
   }
 
-  // updated fires every time a property defined above changes
-  // this allows you to react to variables changing and use javascript to perform logic
-  updated(changedProperties) {
-    changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'type' && this[propName] === 'science') {
-        this.myIcon = 'beaker';
-      }
-    });
-  }
+  
 
   // Lit life-cycle; this fires the 1st time the element is rendered on the screen
   // this is a sign it is safe to make calls to this.shadowRoot
@@ -75,14 +72,7 @@ export class CardIcon extends SimpleColors {
 
   // HTML - specific to Lit
   render() {
-    return html`
-<<<<<<< HEAD
-      <div class="outline">
-        <img href=${beaker} />
-      </div>
-=======
->>>>>>> 1ce67e4bb94f43454c4ca2513ac30978f0f9f511
-    `;
+    return html``;
   }
 
   // HAX specific callback
@@ -106,14 +96,12 @@ export class CardIcon extends SimpleColors {
       settings: {
         configure: [
           {
-            property: 'type',
-            title: 'Type',
-            description: 'Identifies the card',
-            inputMethod: 'select',
-            options: {
-              science: 'Science',
-              math: 'Math',
-            },
+            property: '',
+            title: '',
+            description: '',
+            inputMethod: '',
+            options: {},
+
           },
         ],
         advanced: [],
@@ -121,18 +109,13 @@ export class CardIcon extends SimpleColors {
       demoSchema: [
         {
           tag: CardIcon.tag,
-          properties: {
-            type: 'science',
-          },
-          content:
-            "<p slot='header'>This tag renders in the header</p><ul><li>This renders</li><li>Below the tag</li></ul>",
+          properties: {},
+          content: '',
+
         },
       ],
     };
   }
 }
-<<<<<<< HEAD
-window.customElements.define(CardIcon.tag, CardIcon);
-=======
+
 customElements.define(CardIcon.tag, CardIcon);
->>>>>>> 1ce67e4bb94f43454c4ca2513ac30978f0f9f511

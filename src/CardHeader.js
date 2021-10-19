@@ -1,21 +1,21 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
 
-export class CardHeader extends LitElement {
+export class CardHeader extends SimpleColors {
   static get tag() {
     return 'card-header';
   }
 
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   static get properties() {
-    return {
-    };
+    return {};
   }
 
-  updated(changedProperties) {
-  }
+  // updated(changedProperties) {
+  // }
 
   firstUpdated(changedProperties) {
     if (super.firstUpdated) {
@@ -32,27 +32,29 @@ export class CardHeader extends LitElement {
   }
 
   static get styles() {
-    return css`
-      :host {
-        display: block;
-      }
-    `;
+    return [
+      ...super.styles,
+      css`
+        :host {
+          display: block;
+        }
+      `,
+    ];
   }
 
   // HTML - specific to Lit
   render() {
     return html`
-    <div class = "slot-wrapper">
-        <div data-label = "Header" data-layout-slotname = "header">
-            <slot name = "header"></slot>
+      <div class="slot-wrapper">
+        <div data-label="Header" data-layout-slotname="header">
+          <slot name="header"></slot>
         </div>
-        <div data-label = "SubHeader" data-layout-slotname = "subheader">
-            <slot name = "subheader"></slot>
+        <div data-label="SubHeader" data-layout-slotname="subheader">
+          <slot name="subheader"></slot>
         </div>
-    </div>
+      </div>
     `;
   }
-
 }
 
 customElements.define(CardHeader.tag, CardHeader);
