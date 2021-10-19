@@ -1,6 +1,7 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
 
-export class CardHeader extends LitElement {
+export class CardHeader extends SimpleColors {
   static get tag() {
     return 'card-header';
   }
@@ -31,11 +32,14 @@ export class CardHeader extends LitElement {
   }
 
   static get styles() {
-    return css`
-      :host {
-        display: block;
-      }
-    `;
+    return [
+      ...super.styles,
+      css`
+        :host {
+          display: block;
+        }
+      `,
+    ];
   }
 
   // HTML - specific to Lit
