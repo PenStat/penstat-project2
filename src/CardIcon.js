@@ -1,41 +1,47 @@
 import { html, css } from 'lit';
 import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
 
-export class CardIcon extends SimpleColors {
-// this is the base path to the assets calculated at run time
-// this ensures that assets are shipped correctly when building the demo
-// on github pages, or when people reuse assets outside your elements in production
-// because this won't change we can leverage as an internal variable without being
-// declared in properties. This let's us ship the icons while referencing them correctly
 const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
 const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
 const question = new URL('../assets/question.svg', import.meta.url).href;
-// EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
-// which has the magic life-cycles and developer experience below added
+
+export class CardIcon extends SimpleColors {
+  // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
+  // which has the magic life-cycles and developer experience below added
   // a convention I enjoy so you can change the tag name in 1 place
   static get tag() {
     return 'card-icon';
   }
 
-  // constructor() {
-  //   super();
-
-  // }
-
+  constructor() {
+    super();
+    this.icon = lightbulb;
+    this.altText = 'A lightbulb icon';
+  }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
   static get properties() {
-    return {};
-  }
-
-  // updated(changedProperties) {
-  // }
-  //  return {
-
+    return {
+      icon: { type: String },
     };
   }
 
-  
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'icon' && this[propName] === 'beaker') {
+        this.icon = beaker;
+        this.altText = 'A beaker icon';
+      }
+      if (propName === 'icon' && this[propName] === 'lightbulb') {
+        this.icon = lightbulb;
+        this.altText = 'A lightbulb icon';
+      }
+      if (propName === 'icon' && this[propName] === 'question') {
+        this.icon = question;
+        this.altText = 'A question mark icon';
+      }
+    });
+  }
 
   // Lit life-cycle; this fires the 1st time the element is rendered on the screen
   // this is a sign it is safe to make calls to this.shadowRoot
@@ -59,20 +65,33 @@ const question = new URL('../assets/question.svg', import.meta.url).href;
 
   // CSS - specific to Lit
   static get styles() {
-    return [...super.styles,
+    return [
+      ...super.styles,
       css`
-      :host {
-        display: block;
-        background-color: var(--simple-colors-default-theme-accent-8);
-        color: var(--simple-color-default-theme-grey-1);
-      }
-      `
+        :host {
+          display: block;
+        }
+        div {
+          corner-radius: 100%;
+          background-color: var(--simple-colors-default-theme-grey-6);
+          height: 200px;
+          width: 200px;
+        }
+        img {
+          height: 200px;
+          width: auto;
+        }
+      `,
     ];
   }
 
   // HTML - specific to Lit
   render() {
-    return html``;
+    return html`
+      <div>
+        <img src="${this.icon}" alt="${this.altText}" />
+      </div>
+    `;
   }
 
   // HAX specific callback
@@ -101,7 +120,6 @@ const question = new URL('../assets/question.svg', import.meta.url).href;
             description: '',
             inputMethod: '',
             options: {},
-
           },
         ],
         advanced: [],
@@ -111,7 +129,6 @@ const question = new URL('../assets/question.svg', import.meta.url).href;
           tag: CardIcon.tag,
           properties: {},
           content: '',
-
         },
       ],
     };

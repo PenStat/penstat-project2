@@ -48,8 +48,28 @@
     <learning-card class="one"></learning-card>
     <learning-card class="two"></learning-card>
 
-    <learning-card type="science"></learning-card>
-    <card-icon></card-icon>
+    <learning-card reveal type="science"></learning-card>
+    
+    <card-frame>
+      <div slot="content">
+        I am content
+        <a href="https://psu.instructure.com">Canvas page</a>
+      </div>
+      <div slot="banner">
+        <h2>Hello there</h2>
+        <h3>Welcome to Unit 3</h3>
+      </div>
+    </card-frame>
+    
+    <card-icon type="beaker"></card-icon>
+    
+    <card-frame>
+      <card-header slot='banner' type="objective">
+        <h2 slot="header">Unit 1</h2>
+        <h3 slot="subheader">Learning Objectives</h3>
+      </card-header>
+      <div slot='content'>I am content</div>
+    </card-frame>
   </div>
   <script type="module">
     import "./src/app.js";
