@@ -1,21 +1,43 @@
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
 
-export class CardIcon extends LitElement {
+const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
+const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
+const question = new URL('../assets/question.svg', import.meta.url).href;
+
+export class CardIcon extends SimpleColors {
   static get tag() {
     return 'card-icon';
   }
 
   constructor() {
     super();
-
+    this.icon = lightbulb;
+    this.altText = 'A lightbulb icon';
   }
 
   static get properties() {
-    return {};
+    return {
+      icon: { type: String },
+    };
   }
 
-  // updated(changedProperties) {
-  // }
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'icon' && this[propName] === 'beaker') {
+        this.icon = beaker;
+        this.altText = 'A beaker icon';
+      }
+      if (propName === 'icon' && this[propName] === 'lightbulb') {
+        this.icon = lightbulb;
+        this.altText = 'A lightbulb icon';
+      }
+      if (propName === 'icon' && this[propName] === 'question') {
+        this.icon = question;
+        this.altText = 'A question mark icon';
+      }
+    });
+  }
 
   firstUpdated(changedProperties) {
     if (super.firstUpdated) {
@@ -32,16 +54,33 @@ export class CardIcon extends LitElement {
   }
 
   static get styles() {
-    return css`
-      :host {
-        display: block;
-      }
-    `;
+    return [
+      ...super.styles,
+      css`
+        :host {
+          display: block;
+        }
+        div {
+          corner-radius: 100%;
+          background-color: var(--simple-colors-default-theme-grey-6);
+          height: 200px;
+          width: 200px;
+        }
+        img {
+          height: 200px;
+          width: auto;
+        }
+      `,
+    ];
   }
 
   // HTML - specific to Lit
   render() {
-    return html``;
+    return html`
+      <div>
+        <img src="${this.icon}" alt="${this.altText}" />
+      </div>
+    `;
   }
 
   // HAX specific callback
