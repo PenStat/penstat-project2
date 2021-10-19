@@ -21,8 +21,8 @@
     "start": "web-dev-server"
   },
   "dependencies": {
-    "lit": "^2.0.0",
-    "@lrnwebcomponents/simple-colors": "^4.0.1"
+    "@lrnwebcomponents/simple-colors": "^4.0.1",
+    "lit": "^2.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.15.6",
