@@ -128,6 +128,20 @@ In Class October 14th
 #### What we'll do next
 - Work towards Sunday check-in
 
+### Meeting Date
+In Class October 19th
+#### What we did:
+- Styling for different sizes
+- Switch case rendering with multiple functions
+- We will definitely use @media and min width for styling
+- We could take his approach but make it more flexible by making multiple elements and slotting the content in place
+
+#### What we'll do next
+- Put together the learning card from what is in index.html
+- Work on styling before Thursday / the weekend
+- Click to reveal
+- tab order
+
 ## Status check ins
 These are dedicated status check-ins as this is a multi-week project
 ### Check-in 1
