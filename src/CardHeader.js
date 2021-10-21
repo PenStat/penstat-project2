@@ -6,16 +6,20 @@ export class CardHeader extends LitElement {
   }
 
   static get styles() {
-    return css`
-      :host {
-        display: block;
-        background-color: transparent;
-      }
-    `;
-  } // end styles
+    return [
+      ...super.styles,
+      css`
+        :host {
+          display: block;
+          background-color: transparent;
+        }
+      `,
+    ];
+  }
 
   static get properties() {
     return {
+      ...super.properties,
       type: { type: String },
     };
   }
@@ -28,18 +32,6 @@ export class CardHeader extends LitElement {
 
   // updated(changedProperties) {
   // }
-
-
-  static get styles() {
-    return [
-      ...super.styles,
-      css`
-        :host {
-          display: block;
-        }
-      `,
-    ];
-  }
 
   // HTML - specific to Lit
   render() {
