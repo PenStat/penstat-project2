@@ -1,5 +1,6 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
+import './CardHeader.js';
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
@@ -19,7 +20,6 @@ export class LearningCard extends LitElement {
     setTimeout(() => {
       import('./CardHeader.js');
       import('./CardIcon.js');
-      import('./CardFrame.js');
     }, 0);
   }
 
@@ -141,8 +141,6 @@ export class LearningCard extends LitElement {
           properties: {
             type: 'science',
           },
-          content:
-            "<p slot='header'>This tag renders in the header</p><ul><li>This renders</li><li>Below the tag</li></ul>",
         },
       ],
     };
