@@ -15,6 +15,7 @@ export class CardHeader extends SimpleColors {
   static get properties() {
     return {
       type: { type: String },
+      icon: { type: String },
     };
   }
 
