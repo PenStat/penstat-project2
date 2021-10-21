@@ -1,14 +1,6 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
 
-// this is the base path to the assets calculated at run time
-// this ensures that assets are shipped correctly when building the demo
-// on github pages, or when people reuse assets outside your elements in production
-// because this won't change we can leverage as an internal variable without being
-// declared in properties. This let's us ship the icons while referencing them correctly
-const beaker = new URL('../assets/beaker.svg', import.meta.url).href;
-const lightbulb = new URL('../assets/lightbulb.svg', import.meta.url).href;
-const question = new URL('../assets/question.svg', import.meta.url).href;
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
 export class LearningCard extends LitElement {
@@ -21,7 +13,9 @@ export class LearningCard extends LitElement {
   constructor() {
     super();
     this.myIcon = null;
-    this.type = 'math';
+    this.type = 'objective';
+    this.heading = 'Unit 1';
+    this.subheading = 'Learning Objectives';
     setTimeout(() => {
       import('./CardHeader.js');
       import('./CardIcon.js');
@@ -34,9 +28,6 @@ export class LearningCard extends LitElement {
     return {
       // reflect allows state changes to the element's property to be leveraged in CSS selectors
       type: { type: String, reflect: true },
-      // attribute helps us bind the JS spec for variables names to the HTML spec
-      // <learning-card my-icon="whatever" will set this.myIcon to "whatever"
-      myIcon: { type: String, attribute: 'my-icon' },
     };
   }
 
@@ -44,8 +35,17 @@ export class LearningCard extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'type' && this[propName] === 'objective') {
+        this.icon = 'lightbulb';
+        this.subheading = 'Learning Objectives';
+      }
       if (propName === 'type' && this[propName] === 'science') {
-        this.myIcon = 'beaker';
+        this.icon = 'beaker';
+        this.subheading = 'Chem Connection';
+      }
+      if (propName === 'type' && this[propName] === 'question') {
+        this.icon = 'question';
+        this.subheading = 'Did You Know?';
       }
     });
   }
@@ -92,32 +92,12 @@ export class LearningCard extends LitElement {
   // HTML - specific to Lit
   render() {
     return html`
-      <h1>cool</h1>
-      <div>${this.type}</div>
-      <div>
-        <div
-          class="slot-wrapper"
-          data-label="Header"
-          data-layout-slotname="header"
-        >
-          <slot name="header"></slot>
-        </div>
-        <img part="icon" src="${beaker}" alt="" />
-        <img part="icon" src="${lightbulb}" alt="" />
-        <img part="icon" src="${question}" alt="" />
-        <div
-          class="slot-wrapper"
-          data-label="Content"
-          data-layout-slotname="content"
-        >
-          <slot name="content"></slot>
-          <slot></slot>
-        </div>
-      </div>
-
-      <card-icon></card-icon>
-      <card-header></card-header>
       <card-frame>
+        <card-header slot="banner" type="${this.type}">
+          <h2 slot="header">${this.heading}</h2>
+          <h3 slot="subheader">${this.subheading}</h3>
+        </card-header>
+        <div slot="content"><slot></slot></div>
       </card-frame>
     `;
   }

@@ -13,7 +13,9 @@ export class CardHeader extends SimpleColors {
   }
 
   static get properties() {
-    return {};
+    return {
+      type: { type: String },
+    };
   }
 
   updated(changedProperties) {
@@ -28,20 +30,6 @@ export class CardHeader extends SimpleColors {
         this.icon = 'question';
       }
     });
-  }
-
-  firstUpdated(changedProperties) {
-    if (super.firstUpdated) {
-      super.firstUpdated(changedProperties);
-    }
-  }
-
-  connectedCallback() {
-    super.connectedCallback();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
   }
 
   static get styles() {
