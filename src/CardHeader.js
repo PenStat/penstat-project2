@@ -6,16 +6,20 @@ export class CardHeader extends LitElement {
   }
 
   static get styles() {
-    return css`
-      :host {
-        display: block;
-        background-color: transparent;
-      }
-    `;
-  } // end styles
+    return [
+      ...super.styles,
+      css`
+        :host {
+          display: block;
+          background-color: transparent;
+        }
+      `,
+    ];
+  }
 
   static get properties() {
     return {
+      ...super.properties,
       type: { type: String },
     };
   }
@@ -24,21 +28,22 @@ export class CardHeader extends LitElement {
     super();
     this.accentColor = 'red';
     this.dark = false;
+    this.type = 'objective';
+    this.icon = 'lightbulb';
   } // end costructor
 
-  // updated(changedProperties) {
-  // }
-
-
-  static get styles() {
-    return [
-      ...super.styles,
-      css`
-        :host {
-          display: block;
-        }
-      `,
-    ];
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'type' && this[propName] === 'objective') {
+        this.icon = 'lightbulb';
+      }
+      if (propName === 'type' && this[propName] === 'science') {
+        this.icon = 'beaker';
+      }
+      if (propName === 'type' && this[propName] === 'question') {
+        this.icon = 'question';
+      }
+    });
   }
 
   // HTML - specific to Lit
