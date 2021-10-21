@@ -15,7 +15,9 @@ export class CardHeader extends LitElement {
   } // end styles
 
   static get properties() {
-    return {};
+    return {
+      type: { type: String },
+    };
   }
 
   constructor() {
@@ -27,18 +29,16 @@ export class CardHeader extends LitElement {
   // updated(changedProperties) {
   // }
 
-  firstUpdated(changedProperties) {
-    if (super.firstUpdated) {
-      super.firstUpdated(changedProperties);
-    }
-  }
 
-  connectedCallback() {
-    super.connectedCallback();
-  }
-
-  disconnectedCallback() {
-    super.disconnectedCallback();
+  static get styles() {
+    return [
+      ...super.styles,
+      css`
+        :host {
+          display: block;
+        }
+      `,
+    ];
   }
 
   // HTML - specific to Lit
