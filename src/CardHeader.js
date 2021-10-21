@@ -21,6 +21,7 @@ export class CardHeader extends LitElement {
     return {
       ...super.properties,
       type: { type: String },
+      icon: { type: String },
     };
   }
 
