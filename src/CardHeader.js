@@ -28,10 +28,23 @@ export class CardHeader extends LitElement {
     super();
     this.accentColor = 'red';
     this.dark = false;
+    this.type = 'objective';
+    this.icon = 'lightbulb';
   } // end costructor
 
-  // updated(changedProperties) {
-  // }
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'type' && this[propName] === 'objective') {
+        this.icon = 'lightbulb';
+      }
+      if (propName === 'type' && this[propName] === 'science') {
+        this.icon = 'beaker';
+      }
+      if (propName === 'type' && this[propName] === 'question') {
+        this.icon = 'question';
+      }
+    });
+  }
 
   // HTML - specific to Lit
   render() {
