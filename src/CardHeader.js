@@ -1,34 +1,31 @@
-import { html, css } from 'lit';
-import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
+import { LitElement, html, css } from 'lit';
 
-export class CardHeader extends SimpleColors {
+export class CardHeader extends LitElement {
   static get tag() {
     return 'card-header';
   }
 
-  constructor() {
-    super();
-    this.type = 'objective';
-    this.icon = 'lightbulb';
-  }
+  static get styles() {
+    return css`
+      :host {
+        display: block;
+        background-color: transparent;
+      }
+    `;
+  } // end styles
 
   static get properties() {
     return {};
   }
 
-  updated(changedProperties) {
-    changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'type' && this[propName] === 'objective') {
-        this.icon = 'lightbulb';
-      }
-      if (propName === 'type' && this[propName] === 'science') {
-        this.icon = 'beaker';
-      }
-      if (propName === 'type' && this[propName] === 'question') {
-        this.icon = 'question';
-      }
-    });
-  }
+  constructor() {
+    super();
+    this.accentColor = 'red';
+    this.dark = false;
+  } // end costructor
+
+  // updated(changedProperties) {
+  // }
 
   firstUpdated(changedProperties) {
     if (super.firstUpdated) {
@@ -44,24 +41,14 @@ export class CardHeader extends SimpleColors {
     super.disconnectedCallback();
   }
 
-  static get styles() {
-    return [
-      ...super.styles,
-      css`
-        :host {
-          display: block;
-        }
-      `,
-    ];
-  }
-
   // HTML - specific to Lit
   render() {
     return html`
-      <div class="banner-wrapper">
-        <card-icon icon="${this.icon}"></card-icon>
-        <div class="header-wrapper">
+      <div class="slot-wrapper">
+        <div data-label="Header" data-layout-slotname="header">
           <slot name="header"></slot>
+        </div>
+        <div data-label="SubHeader" data-layout-slotname="subheader">
           <slot name="subheader"></slot>
         </div>
       </div>
