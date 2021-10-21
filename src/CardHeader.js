@@ -1,23 +1,37 @@
-import { html, css } from 'lit';
-import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
+import { LitElement, html, css } from 'lit';
 
-export class CardHeader extends SimpleColors {
+export class CardHeader extends LitElement {
   static get tag() {
     return 'card-header';
   }
 
-  constructor() {
-    super();
-    this.type = 'objective';
-    this.icon = 'lightbulb';
+  static get styles() {
+    return [
+      ...super.styles,
+      css`
+        :host {
+          display: block;
+          background-color: transparent;
+        }
+      `,
+    ];
   }
 
   static get properties() {
     return {
+      ...super.properties,
       type: { type: String },
       icon: { type: String },
     };
   }
+
+  constructor() {
+    super();
+    this.accentColor = 'red';
+    this.dark = false;
+    this.type = 'objective';
+    this.icon = 'lightbulb';
+  } // end costructor
 
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
@@ -33,24 +47,14 @@ export class CardHeader extends SimpleColors {
     });
   }
 
-  static get styles() {
-    return [
-      ...super.styles,
-      css`
-        :host {
-          display: block;
-        }
-      `,
-    ];
-  }
-
   // HTML - specific to Lit
   render() {
     return html`
-      <div class="banner-wrapper">
-        <card-icon icon="${this.icon}"></card-icon>
-        <div class="header-wrapper">
+      <div class="slot-wrapper">
+        <div data-label="Header" data-layout-slotname="header">
           <slot name="header"></slot>
+        </div>
+        <div data-label="SubHeader" data-layout-slotname="subheader">
           <slot name="subheader"></slot>
         </div>
       </div>
