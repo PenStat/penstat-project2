@@ -13,7 +13,6 @@ export class CardHeader extends SimpleColors {
         :host {
           display: block;
         }
-
         .banner-wrapper {
           background-color: var(--simple-colors-default-theme-accent-6);
         }
@@ -59,7 +58,7 @@ export class CardHeader extends SimpleColors {
   render() {
     return html`
       <div class="banner-wrapper">
-        <card-icon icon="${this.icon}"></card-icon>
+        <card-icon type="${this.icon}"></card-icon>
         <div class="header-wrapper">
           <slot name="header"></slot>
           <slot name="subheader"></slot>

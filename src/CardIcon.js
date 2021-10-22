@@ -1,5 +1,5 @@
 // dependencies / things imported
-import { LitElement, html, css } from 'lit';
+import { html, css } from 'lit';
 import { SimpleColors } from "@lrnwebcomponents/simple-colors/simple-colors.js";
 
 // this is the base path to the assets calculated at run time
@@ -80,6 +80,12 @@ export class CardIcon extends SimpleColors {
         display: block;
         background-color: var(--simple-colors-default-theme-accent-7);
         color: var(--simple-colors-default-theme-accent-7);
+      },
+      img {
+        display: inline-flex;
+        height: var(--learning-card-height, 100px);
+        width: var(--learning-card-width, 100px);
+        background-color: green;
       }
       `
     ];
@@ -89,7 +95,7 @@ export class CardIcon extends SimpleColors {
   render() {
     return html`
       <div class="outline">
-        <img src="${this.icon}" alt=""/>
+        <img src="${this.icon}" alt="" style='height: 100px; width: 100px'/>
       </div>
     `;
   }
