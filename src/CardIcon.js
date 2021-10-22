@@ -21,7 +21,8 @@ export class CardIcon extends SimpleColors {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.icon = beaker;
+    this.icon = lightbulb;
+    this.type = "objective";
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -29,21 +30,24 @@ export class CardIcon extends SimpleColors {
     return {
       ...super.properties,
       icon: {type: String},
+      type: {type: String},
     };
   }
 
   // updated fires every time a property defined above changes
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
+    super.updated(changedProperties);
     changedProperties.forEach((oldValue, propName) => {
       if (propName === 'type' && this[propName] === 'science') {
-        this.myIcon = 'beaker';
+        this.icon = beaker;
+        this.accentColor = "green";
       }
       if (propName === 'type' && this[propName] === 'objective'){
-        this.myIcon = 'lightbulb';
+        this.icon = lightbulb;
       }
       if (propName === 'type' && this[propName] === 'question'){
-        this.myIcon = 'question';
+        this.icon = question;
       }
     });
   }
@@ -74,8 +78,8 @@ export class CardIcon extends SimpleColors {
       css`
       :host {
         display: block;
-        background-color: var(--simple-colors-default-theme-accent-8);
-        color: var(--simple-colors-default-theme-grey-1);
+        background-color: var(--simple-colors-default-theme-accent-7);
+        color: var(--simple-colors-default-theme-accent-7);
       }
       `
     ];
@@ -85,7 +89,6 @@ export class CardIcon extends SimpleColors {
   render() {
     return html`
       <div class="outline">
-        <img href=${beaker} />
         <img src="${this.icon}" alt=""/>
       </div>
     `;
