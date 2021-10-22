@@ -1,6 +1,6 @@
 // dependencies / things imported
 import { LitElement, html, css } from 'lit';
-import './CardHeader.js';
+import './CardFrame.js';
 
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
@@ -13,7 +13,6 @@ export class LearningCard extends LitElement {
   // HTMLElement life-cycle, built in; use this for setting defaults
   constructor() {
     super();
-    this.myIcon = null;
     this.type = 'objective';
     this.heading = 'Unit 1';
     this.subheading = 'Learning Objectives';
