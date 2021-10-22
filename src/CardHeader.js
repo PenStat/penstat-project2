@@ -12,25 +12,11 @@ export class CardHeader extends SimpleColors {
       css`
         :host {
           display: block;
-          --card-header-color1: darkorange;
-          --card-header-color2: green;
-          --card-header-color3: blue;
         }
 
-        :host([type='objective']) {
-          --card-header-color1: darkorange;
+        .banner-wrapper {
+          background-color: var(--simple-colors-default-theme-accent-6);
         }
-        /* end objective */
-
-        :host([type='science']) {
-          --card-header-color2: green;
-        }
-        /* end science */
-
-        :host([type='question']) {
-          --card-header-color3: blue;
-        }
-        /* end question */
       `,
     ];
   }
@@ -52,15 +38,19 @@ export class CardHeader extends SimpleColors {
   } // end costructor
 
   updated(changedProperties) {
+    super.updated(changedProperties);
     changedProperties.forEach((oldValue, propName) => {
       if (propName === 'type' && this[propName] === 'objective') {
         this.icon = 'lightbulb';
+        this.accentColor = 'orange';
       }
       if (propName === 'type' && this[propName] === 'science') {
         this.icon = 'beaker';
+        this.accentColor = 'green';
       }
       if (propName === 'type' && this[propName] === 'question') {
         this.icon = 'question';
+        this.accentColor = 'blue';
       }
     });
   }

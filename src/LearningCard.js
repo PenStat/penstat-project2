@@ -93,8 +93,8 @@ export class LearningCard extends LitElement {
     return html`
       <card-frame>
         <card-header slot="banner" type="${this.type}">
-          <h2 slot="header">${this.heading}</h2>
-          <h3 slot="subheader">${this.subheading}</h3>
+          <h2 slot="header"><slot name="header"></slot></h2>
+          <h3 slot="subheader"><slot name="subheader"></slot></h3>
         </card-header>
         <div slot="content"><slot></slot></div>
       </card-frame>
