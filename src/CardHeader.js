@@ -12,8 +12,25 @@ export class CardHeader extends SimpleColors {
       css`
         :host {
           display: block;
-          background-color: transparent;
+          --card-header-color1: darkorange;
+          --card-header-color2: green;
+          --card-header-color3: blue;
         }
+
+        :host([type='objective']) {
+          --card-header-color1: darkorange;
+        }
+        /* end objective */
+
+        :host([type='science']) {
+          --card-header-color2: green;
+        }
+        /* end science */
+
+        :host([type='question']) {
+          --card-header-color3: blue;
+        }
+        /* end question */
       `,
     ];
   }
