@@ -57,8 +57,8 @@ export class CardHeader extends SimpleColors {
   // HTML - specific to Lit
   render() {
     return html`
-      <div class="banner-wrapper">
-        <card-icon type="${this.icon}"></card-icon>
+      <div class="banner-wrapper" style="display: flex;">
+        <card-icon type="${this.icon}" style="width: 100px"></card-icon>
         <div class="header-wrapper">
           <slot name="header"></slot>
           <slot name="subheader"></slot>

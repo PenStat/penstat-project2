@@ -1,6 +1,6 @@
 // dependencies / things imported
 import { html, css } from 'lit';
-import { SimpleColors } from "@lrnwebcomponents/simple-colors/simple-colors.js";
+import { SimpleColors } from '@lrnwebcomponents/simple-colors/simple-colors.js';
 
 // this is the base path to the assets calculated at run time
 // this ensures that assets are shipped correctly when building the demo
@@ -22,15 +22,15 @@ export class CardIcon extends SimpleColors {
   constructor() {
     super();
     this.icon = lightbulb;
-    this.type = "objective";
+    this.type = 'objective';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
   static get properties() {
     return {
       ...super.properties,
-      icon: {type: String},
-      type: {type: String},
+      icon: { type: String },
+      type: { type: String },
     };
   }
 
@@ -41,12 +41,12 @@ export class CardIcon extends SimpleColors {
     changedProperties.forEach((oldValue, propName) => {
       if (propName === 'type' && this[propName] === 'science') {
         this.icon = beaker;
-        this.accentColor = "green";
+        this.accentColor = 'green';
       }
-      if (propName === 'type' && this[propName] === 'objective'){
+      if (propName === 'type' && this[propName] === 'objective') {
         this.icon = lightbulb;
       }
-      if (propName === 'type' && this[propName] === 'question'){
+      if (propName === 'type' && this[propName] === 'question') {
         this.icon = question;
       }
     });
@@ -74,20 +74,22 @@ export class CardIcon extends SimpleColors {
 
   // CSS - specific to Lit
   static get styles() {
-    return [...super.styles,
+    return [
+      ...super.styles,
       css`
-      :host {
-        display: block;
-        background-color: var(--simple-colors-default-theme-accent-7);
-        color: var(--simple-colors-default-theme-accent-7);
-      },
-      img {
-        display: inline-flex;
-        height: var(--learning-card-height, 100px);
-        width: var(--learning-card-width, 100px);
-        background-color: green;
-      }
-      `
+        :host {
+          display: block;
+          //background-color: var(--simple-colors-default-theme-accent-7);
+          color: var(--simple-colors-default-theme-accent-7);
+        }
+        ,
+        img {
+          display: inline-flex;
+          height: var(--learning-card-height, 100px);
+          width: var(--learning-card-width, 100px);
+          background-color: green;
+        }
+      `,
     ];
   }
 
@@ -95,7 +97,7 @@ export class CardIcon extends SimpleColors {
   render() {
     return html`
       <div class="outline">
-        <img src="${this.icon}" alt="" style='height: 100px; width: 100px'/>
+        <img src="${this.icon}" alt="" style="height: 100px; width: 100px" />
       </div>
     `;
   }

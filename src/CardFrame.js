@@ -5,21 +5,17 @@ export class CardFrame extends LitElement {
     return 'card-frame';
   }
 
-  constructor() {
-    super();
-
-  }
+  // constructor() {
+  //   super();
+  //
+  // }
 
   static get properties() {
-    return {
-
-    };
+    return {};
   }
 
   static get styles() {
-    return css`
-
-    `;
+    return css``;
   }
 
   render() {
