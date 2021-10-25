@@ -120,7 +120,7 @@ In Class October 14th
   - This man likes to fish a lot
 - Next Steps
   - Fully implement Simple Colors
-  - WOrk Towards check in
+  - Work Towards check in
     - Dividing all the parts / work up
     - Trying to implement SimpleColors
     - Other groups making different card designs?
@@ -142,6 +142,18 @@ In Class October 19th
 - Click to reveal
 - tab order
 
+### Meeting Date
+Offcie Hours October 22nd
+#### What we did:
+- Implemented and selected colors from simple colors
+- Implemented multi-slot functionality
+- Patially and fully functional header, content, and icon.
+
+#### What we'll do next
+- Work on the design
+- Refine the overall card
+- Collapsable?
+
 ## Status check ins
 These are dedicated status check-ins as this is a multi-week project
 ### Check-in 1
@@ -154,8 +166,9 @@ These are dedicated status check-ins as this is a multi-week project
 - Your icon definition should be dynamically imported in the constructor or firstUpdated life-cycle of the header / banner element (reading and examples before should help inform this)
   - It is for the main card.
 ### Check-in 3
--
--
+- All elements scoped out and somewhat working
+- Functional multi-slot
+- Icon as an icon alone
 ### Check-in 4
 -
 -
