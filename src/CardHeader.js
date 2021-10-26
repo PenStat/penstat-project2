@@ -12,6 +12,8 @@ export class CardHeader extends SimpleColors {
       css`
         :host {
           display: block;
+          font-family: 'Open Sans', sans-serif;
+          color: white;
         }
         .banner-wrapper {
           background-color: var(--simple-colors-default-theme-accent-6);
