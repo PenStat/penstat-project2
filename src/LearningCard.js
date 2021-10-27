@@ -14,8 +14,8 @@ export class LearningCard extends LitElement {
   constructor() {
     super();
     this.type = 'objective';
-    this.heading = 'Unit 1';
-    this.subheading = 'Learning Objectives';
+    // this.heading = 'Unit 1';
+    // this.subheading = 'Learning Objectives';
     setTimeout(() => {
       import('./CardHeader.js');
       import('./CardIcon.js');
@@ -93,10 +93,16 @@ export class LearningCard extends LitElement {
     return html`
       <card-frame>
         <card-header slot="banner" type="${this.type}">
-          <h2 slot="header"><slot name="header"></slot></h2>
-          <h3 slot="subheader"><slot name="subheader"></slot></h3>
+          <h1 slot="header" aria-label="Main header">
+            <slot name="header"></slot>
+          </h1>
+          <h2 slot="subheader" aria-label="Sub Header">
+            <slot name="subheader"></slot>
+          </h2>
         </card-header>
-        <div slot="content"><slot></slot></div>
+        <div slot="content" style="margin-left: 5em; margin-right: 5em;">
+          <slot></slot>
+        </div>
       </card-frame>
     `;
   }
