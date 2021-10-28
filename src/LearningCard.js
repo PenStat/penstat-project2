@@ -87,7 +87,8 @@ export class LearningCard extends LitElement {
         height: var(--learning-card-height, 100px);
         width: var(--learning-card-width, 100px);
         background-color: green;
-      }
+      },
+
     `;
   }
 
@@ -96,13 +97,17 @@ export class LearningCard extends LitElement {
     return html`
       <card-frame>
         <card-header slot="banner" type="${this.type}">
-          <h1 slot="header" aria-label="Main header" style="font-weight: 100;">
+          <h1
+            slot="header"
+            aria-label="Main header"
+            style="font-family: 'Open Sans', sans-serif; font-weight: 300;"
+          >
             <slot name="header"></slot>
           </h1>
           <h2
             slot="subheader"
             aria-label="Sub Header"
-            style='font-weight: 900; font-family: "Comic Sans MS";'
+            style='font-family: "Open Sans", sans-serif; font-weight: 500;'
           >
             <slot name="subheader"></slot>
           </h2>
