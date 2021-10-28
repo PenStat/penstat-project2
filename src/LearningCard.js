@@ -77,6 +77,7 @@ export class LearningCard extends LitElement {
     return css`
       :host {
         display: block;
+        min-width: 20em;
       }
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       :host([type='math']) img {
