@@ -23,6 +23,7 @@ export class CardIcon extends SimpleColors {
     super();
     this.icon = lightbulb;
     this.type = 'objective';
+    this.alt = 'Question Mark Icon';
   }
 
   // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
@@ -31,6 +32,7 @@ export class CardIcon extends SimpleColors {
       ...super.properties,
       icon: { type: String },
       type: { type: String },
+      alt: { type: String },
     };
   }
 
@@ -41,13 +43,15 @@ export class CardIcon extends SimpleColors {
     changedProperties.forEach((oldValue, propName) => {
       if (propName === 'type' && this[propName] === 'science') {
         this.icon = beaker;
-        this.accentColor = 'green';
+        this.alt = 'A lab beaker icon';
       }
       if (propName === 'type' && this[propName] === 'objective') {
         this.icon = lightbulb;
+        this.alt = 'A lightbulb icon';
       }
       if (propName === 'type' && this[propName] === 'question') {
         this.icon = question;
+        this.alt = 'Question Mark Icon';
       }
     });
   }

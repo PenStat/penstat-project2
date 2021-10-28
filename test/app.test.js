@@ -17,8 +17,7 @@ describe('LearningCard', () => {
       </ul>
     </learning-card>`);
   });
-
-  it('renders an h1', () => {
+  it('renders the main header', () => {
     const h1 = element.shadowRoot.querySelector('h1 slot');
     expect(h1).to.exist;
     expect(h1.assignedElements({ flat: true })[0].innerText).to.equal(
@@ -26,7 +25,7 @@ describe('LearningCard', () => {
     );
   });
 
-  it('renders an h2', () => {
+  it('renders the sub header', () => {
     const h2 = element.shadowRoot.querySelector('h2 slot');
     expect(h2).to.exist;
     // console.log(h2.assignedElements({flat: true}));
@@ -49,19 +48,30 @@ describe('LearningCard', () => {
     expect(element.type).to.equal('science');
     expect(element.icon).to.equal('beaker');
     element.type = 'objective';
-    expect(element.type).to.equal('objective');
-    expect(element.icon).to.equal('lightbulb');
+    setTimeout(() => {
+      expect(element.type).to.equal('objective');
+      expect(element.icon).to.equal('lightbulb');
+    }, 100);
     element.type = 'question';
-    expect(element.type).to.equal('question');
-    expect(element.icon).to.equal('question');
+    setTimeout(() => {
+      expect(element.type).to.equal('question');
+      expect(element.icon).to.equal('question');
+    }, 100);
   });
 
-  // it('passes the a11y audit', async () => {
-  //   element.type = 'science';
-  //   await expect(element).shadowDom.to.be.accessible();
-  //   element.type = 'objective';
-  //   await expect(element).shadowDom.to.be.accessible();
-  //   element.type = 'question';
-  //   await expect(element).shadowDom.to.be.accessible();
-  // });
+  it('passes the a11y audit', async () => {
+    element.type = 'science';
+    // await expect(element).shadowDom.to.be.accessible();
+    setTimeout(() => {
+      expect(element).shadowDom.to.be.accessible();
+    }, 100);
+    element.type = 'objective';
+    setTimeout(() => {
+      expect(element).shadowDom.to.be.accessible();
+    }, 100);
+    element.type = 'question';
+    setTimeout(() => {
+      expect(element).shadowDom.to.be.accessible();
+    }, 100);
+  });
 });
