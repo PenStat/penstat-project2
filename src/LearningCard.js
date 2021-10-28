@@ -34,32 +34,21 @@ export class LearningCard extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'type') {
-        if (this.type === 'objective') {
-          this.icon = 'lightbulb';
-        } else if (this.type === 'science') {
-          this.icon = 'beaker';
-        } else if (this.type === 'question') {
-          this.icon = 'question';
-        } else {
-          console.error('Type attribute not recognized');
-        }
+      if (propName === 'type' && this[propName] === 'objective') {
+        this.icon = 'lightbulb';
+        console.log(this.icon);
+        console.log('lightbulb');
       }
-      //  && this[propName] === 'objective') {
-      //   this.icon = 'lightbulb';
-      //   console.log(this.icon);
-      //   console.log('lightbulb');
-      // }
-      // if (propName === 'type' && this[propName] === 'science') {
-      //   this.icon = 'beaker';
-      //   console.log(this.icon);
-      //   console.log('beaker');
-      // }
-      // if (propName === 'type' && this[propName] === 'question') {
-      //   this.icon = 'question';
-      //   console.log(this.icon);
-      //   console.log('question');
-      // }
+      if (propName === 'type' && this[propName] === 'science') {
+        this.icon = 'beaker';
+        console.log(this.icon);
+        console.log('beaker');
+      }
+      if (propName === 'type' && this[propName] === 'question') {
+        this.icon = 'question';
+        console.log(this.icon);
+        console.log('question');
+      }
     });
   }
 
@@ -107,10 +96,14 @@ export class LearningCard extends LitElement {
     return html`
       <card-frame>
         <card-header slot="banner" type="${this.type}">
-          <h1 slot="header" aria-label="Main header">
+          <h1 slot="header" aria-label="Main header" style="font-weight: 100;">
             <slot name="header"></slot>
           </h1>
-          <h2 slot="subheader" aria-label="Sub Header">
+          <h2
+            slot="subheader"
+            aria-label="Sub Header"
+            style='font-weight: 900; font-family: "Comic Sans MS";'
+          >
             <slot name="subheader"></slot>
           </h2>
         </card-header>
