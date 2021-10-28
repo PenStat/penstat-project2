@@ -34,18 +34,32 @@ export class LearningCard extends LitElement {
   // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     changedProperties.forEach((oldValue, propName) => {
-      if (propName === 'type' && this[propName] === 'objective') {
-        this.icon = 'lightbulb';
-        this.subheading = 'Learning Objectives';
+      if (propName === 'type') {
+        if (this.type === 'objective') {
+          this.icon = 'lightbulb';
+        } else if (this.type === 'science') {
+          this.icon = 'beaker';
+        } else if (this.type === 'question') {
+          this.icon = 'question';
+        } else {
+          console.error('Type attribute not recognized');
+        }
       }
-      if (propName === 'type' && this[propName] === 'science') {
-        this.icon = 'beaker';
-        this.subheading = 'Chem Connection';
-      }
-      if (propName === 'type' && this[propName] === 'question') {
-        this.icon = 'question';
-        this.subheading = 'Did You Know?';
-      }
+      //  && this[propName] === 'objective') {
+      //   this.icon = 'lightbulb';
+      //   console.log(this.icon);
+      //   console.log('lightbulb');
+      // }
+      // if (propName === 'type' && this[propName] === 'science') {
+      //   this.icon = 'beaker';
+      //   console.log(this.icon);
+      //   console.log('beaker');
+      // }
+      // if (propName === 'type' && this[propName] === 'question') {
+      //   this.icon = 'question';
+      //   console.log(this.icon);
+      //   console.log('question');
+      // }
     });
   }
 
