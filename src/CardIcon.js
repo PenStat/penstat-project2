@@ -101,7 +101,7 @@ export class CardIcon extends SimpleColors {
   render() {
     return html`
       <div class="outline">
-        <img src="${this.icon}" alt="" style="height: 100px; width: 100px" />
+        <img src="${this.icon}" alt="" style="height: 100px; width: 100px;" />
       </div>
     `;
   }

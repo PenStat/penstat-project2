@@ -96,10 +96,14 @@ export class LearningCard extends LitElement {
     return html`
       <card-frame>
         <card-header slot="banner" type="${this.type}">
-          <h1 slot="header" aria-label="Main header">
+          <h1 slot="header" aria-label="Main header" style="font-weight: 100;">
             <slot name="header"></slot>
           </h1>
-          <h2 slot="subheader" aria-label="Sub Header">
+          <h2
+            slot="subheader"
+            aria-label="Sub Header"
+            style='font-weight: 900; font-family: "Comic Sans MS";'
+          >
             <slot name="subheader"></slot>
           </h2>
         </card-header>
