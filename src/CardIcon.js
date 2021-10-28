@@ -85,6 +85,7 @@ export class CardIcon extends SimpleColors {
           display: block;
           //background-color: var(--simple-colors-default-theme-accent-7);
           color: var(--simple-colors-default-theme-accent-7);
+          max-width: 6.813em;
         }
         ,
         img {
