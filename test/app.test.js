@@ -19,33 +19,49 @@ describe('LearningCard', () => {
   });
 
   it('renders an h1', () => {
-    const h1 = element.shadowRoot.querySelector('h1');
-    console.log(h1);
+    const h1 = element.shadowRoot.querySelector('h1 slot');
     expect(h1).to.exist;
-    expect(h1.textContent).to.equal('Science Card');
+    expect(h1.assignedElements({ flat: true })[0].innerText).to.equal(
+      'Science Card'
+    );
   });
 
   it('renders an h2', () => {
-    const h2 = element.shadowRoot.querySelector('h2');
-    console.log(h2);
+    const h2 = element.shadowRoot.querySelector('h2 slot');
     expect(h2).to.exist;
-    expect(h2.textContent).to.equal("Today's topic: Bio");
+    // console.log(h2.assignedElements({flat: true}));
+    expect(h2.assignedElements({ flat: true })[0].innerText).to.equal(
+      "Today's topic: Bio"
+    );
   });
 
   it('renders main content', () => {
-    const para = element.shadowRoot.querySelector('p');
-    console.log(para);
+    const para = element.querySelector('p');
     expect(para).to.exist;
     expect(para.textContent).to.equal("Don't learn bio");
 
-    const list = element.shadowRoot.querySelector('ul');
+    const list = element.querySelector('ul');
     expect(list).to.exist;
-    expect(list.innerText).to.equal(html`<li>Bio</li>
-      <li>Chem</li>
-      <li>Glycolysis</li>`);
+    expect(list.children.length).to.equal(3);
   });
 
-  it('passes the a11y audit', async () => {
-    await expect(element).shadowDom.to.be.accessible();
+  it('checks updatedProperties', () => {
+    expect(element.type).to.equal('science');
+    expect(element.icon).to.equal('beaker');
+    element.type = 'objective';
+    expect(element.type).to.equal('objective');
+    expect(element.icon).to.equal('lightbulb');
+    element.type = 'question';
+    expect(element.type).to.equal('question');
+    expect(element.icon).to.equal('question');
   });
+
+  // it('passes the a11y audit', async () => {
+  //   element.type = 'science';
+  //   await expect(element).shadowDom.to.be.accessible();
+  //   element.type = 'objective';
+  //   await expect(element).shadowDom.to.be.accessible();
+  //   element.type = 'question';
+  //   await expect(element).shadowDom.to.be.accessible();
+  // });
 });
