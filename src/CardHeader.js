@@ -18,7 +18,8 @@ export class CardHeader extends SimpleColors {
         }
         .banner-wrapper {
           background-color: var(--simple-colors-default-theme-accent-7);
-        }
+        },
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,500&display=swap');
       `,
     ];
   }
@@ -33,7 +34,6 @@ export class CardHeader extends SimpleColors {
 
   constructor() {
     super();
-    this.accentColor = 'red';
     this.dark = false;
     this.type = 'objective';
     this.icon = 'lightbulb';

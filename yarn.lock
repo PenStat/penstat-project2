@@ -1949,6 +1949,17 @@
     "@types/sinon-chai" "^3.2.3"
     chai-a11y-axe "^1.3.2-next.0"
 
+"@penstat2/penguin-button@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@penstat2/penguin-button/-/penguin-button-0.0.1.tgz#617a49a3f4e45a860296930f689e74a37533f31f"
+  integrity sha512-3ttPZjJXW3r8MsSgDXm3tTonJVqjggZaf3G2EwZe0mejFjuL5xJwHwx5CFaRJo2vTbGS4ofeDQB90k9ObSA07g==
+  dependencies:
+    "@lrnwebcomponents/b-r" "^4.0.0"
+    "@lrnwebcomponents/intersection-element" "^4.0.0"
+    "@lrnwebcomponents/simple-icon" "^4.0.0"
+    lit "^2.0.0-rc.4"
+    web-dev-server "^3.0.22"
+
 "@penstat2/penguin-state-button@^0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@penstat2/penguin-state-button/-/penguin-state-button-0.0.4.tgz#0ab52d4dbfbb7c90e4bee6bba70a0f1145981e21"
@@ -5884,7 +5895,7 @@ micromatch@^4.0.2, micromatch@^4.0.4:
     braces "^3.0.1"
     picomatch "^2.2.3"
 
-mime-db@1.50.0:
+mime-db@1.50.0, mime-db@^1.43.0:
   version "1.50.0"
   resolved "https://registry.npmjs.org/mime-db/-/mime-db-1.50.0.tgz"
   integrity sha512-9tMZCDlYHqeERXEHO9f/hKfNXhre5dK2eE/krIvUjZbS2KPcqGDfNShIWS1uW9XOTKQKqK6qbeOci18rbfW77A==
@@ -7509,9 +7520,9 @@ tsconfig-paths@^3.11.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@^1.9.0:
+tslib@^1.10, tslib@^1.9.0:
   version "1.14.1"
-  resolved "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
 tslib@^2.0.3:
@@ -7827,6 +7838,14 @@ web-animations-js@2.3.2:
   version "2.3.2"
   resolved "https://registry.npmjs.org/web-animations-js/-/web-animations-js-2.3.2.tgz"
   integrity sha512-TOMFWtQdxzjWp8qx4DAraTWTsdhxVSiWa6NkPFSaPtZ1diKUxTn4yTix73A1euG1WbSOMMPcY51cnjTIHrGtDA==
+
+web-dev-server@^3.0.22:
+  version "3.0.22"
+  resolved "https://registry.yarnpkg.com/web-dev-server/-/web-dev-server-3.0.22.tgz#8f63c889d122bb2395accd18b913e59e339e48e4"
+  integrity sha512-4ZJGLXBIwRq+s15tS8MLxpN1PB6IPoho1Icmd6lSU7n6o4XcFlvCe2799GrF57jJ621DaA9NPpM7oNacAY+pCA==
+  dependencies:
+    mime-db "^1.43.0"
+    tslib "^1.10"
 
 web-dialog@0.0.11:
   version "0.0.11"
