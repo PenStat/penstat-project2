@@ -14,9 +14,10 @@ export class CardHeader extends SimpleColors {
           display: block;
           font-family: 'Open Sans', sans-serif;
           color: white;
+          border: 1px transparent;
         }
         .banner-wrapper {
-          background-color: var(--simple-colors-default-theme-accent-6);
+          background-color: var(--simple-colors-default-theme-accent-7);
         }
       `,
     ];
