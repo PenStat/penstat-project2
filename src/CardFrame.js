@@ -15,7 +15,12 @@ export class CardFrame extends LitElement {
   }
 
   static get styles() {
-    return css``;
+    return css`
+      :host {
+        display: block;
+        border: 1px solid black;
+      }
+    `;
   }
 
   render() {
