@@ -45,6 +45,7 @@ describe('LearningCard', () => {
   });
 
   it('checks updatedProperties', () => {
+    element.type = 'science';
     expect(element.type).to.equal('science');
     expect(element.icon).to.equal('beaker');
     element.type = 'objective';
@@ -59,9 +60,41 @@ describe('LearningCard', () => {
     }, 100);
   });
 
+  it('checks basic properties', async () => {
+    const element2 = await fixture(html` <learning-card type="objective">
+      <span slot="header">UNIT 1</span>
+      <span slot="subheader">LEARNING OBJECTIVES</span>
+      <ul>
+        <li>Describe the subatomic particles that make up an atom.</li>
+        <li>
+          use the periodic table to determine the numbers of protons and
+          electrons in a neutral (uncharged) atom.
+        </li>
+        <li>Describe the subatomic particles that make up an atom.</li>
+        <li>
+          use the periodic table to determine the numbers of protons and
+          electrons in a neutral (uncharged) atom.
+        </li>
+      </ul>
+    </learning-card>`);
+    const element3 = await fixture(html` <learning-card type="question">
+      <span slot="header">UNIT 1</span>
+      <span slot="subheader">DID YOU KNOW?</span>
+      <p>
+        There is about 0.4 pounds or 200 grams of salt (NaCl) in the average
+        adult human body.
+      </p>
+    </learning-card>`);
+    expect(element.type).to.equal('science');
+    expect(element.icon).to.equal('beaker');
+    expect(element2.type).to.equal('objective');
+    expect(element2.icon).to.equal('lightbulb');
+    expect(element3.type).to.equal('question');
+    expect(element3.icon).to.equal('question');
+  });
+
   it('passes the a11y audit', async () => {
     element.type = 'science';
-    // await expect(element).shadowDom.to.be.accessible();
     setTimeout(() => {
       expect(element).shadowDom.to.be.accessible();
     }, 100);

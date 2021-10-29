@@ -49,20 +49,32 @@
     <li><a href="/hax.html">HAX, card demo</a></li>
   </ul>
   <div class="wrapper">
-<!--    <learning-card class="one"></learning-card>-->
-<!--    <learning-card class="two" type="question"></learning-card>-->
-<!--    <learning-card type="science"></learning-card>-->
     <learning-card type="science"><span slot='header'>Header content TEST</span><span slot='subheader'>SUBHEADER TESTING</span>We're trying multi slotted content</learning-card>
     <br>
-    <learning-card type="science">
-      <span slot="header">Science Card</span>
-      <span slot="subheader">Today's topic: Bio</span>
-      <p>Don't learn bio</p>
+    <learning-card type="objective">
+      <span slot="header">UNIT 1</span>
+      <span slot="subheader">LEARNING OBJECTIVES</span>
       <ul>
-        <li>Bio</li>
-        <li>Chem</li>
-        <li>Glycolysis</li>
+        <li>Describe the subatomic particles that make up an atom.</li>
+        <li>Use the periodic table to determine the numbers of protons and electrons in a neutral (uncharged) atom.</li>
+        <li>Describe the subatomic particles that make up an atom.</li>
+        <li>Use the periodic table to determine the numbers of protons and electrons in a neutral (uncharged) atom.</li>
       </ul>
+    </learning-card>
+    <br>
+    <learning-card type="science">
+      <span slot="header">UNIT 1</span>
+      <span slot="subheader">CHEM CONNECTION</span>
+      <ul>
+        <li>Describe the subatomic particles that make up an atom.</li>
+        <li>Use the periodic table to determine the numbers of protons and electrons in a neutral (uncharged) atom.</li>
+      </ul>
+    </learning-card>
+    <br>
+    <learning-card type="question">
+      <span slot="header">UNIT 1</span>
+      <span slot="subheader">DID YOU KNOW?</span>
+      <p>There is about 0.4 pounds or 200 grams of salt (NaCl) in the average adult human body.</p>
     </learning-card>
   </div>
   <script type="module">
