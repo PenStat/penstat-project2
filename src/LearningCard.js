@@ -2,6 +2,8 @@
 import { LitElement, html, css } from 'lit';
 import './CardFrame.js';
 
+const arrow = new URL('../assets/arrow.svg', import.meta.url).href;
+
 // EXPORT (so make available to other documents that reference this file) a class, that extends LitElement
 // which has the magic life-cycles and developer experience below added
 export class LearningCard extends LitElement {
@@ -14,6 +16,9 @@ export class LearningCard extends LitElement {
   constructor() {
     super();
     this.type = 'objective';
+    this.arrow = arrow;
+    this.visible = false;
+    // this.height = 100;
     // this.heading = 'Unit 1';
     // this.subheading = 'Learning Objectives';
     setTimeout(() => {
@@ -36,18 +41,12 @@ export class LearningCard extends LitElement {
     changedProperties.forEach((oldValue, propName) => {
       if (propName === 'type' && this[propName] === 'objective') {
         this.icon = 'lightbulb';
-        console.log(this.icon);
-        console.log('lightbulb');
       }
       if (propName === 'type' && this[propName] === 'science') {
         this.icon = 'beaker';
-        console.log(this.icon);
-        console.log('beaker');
       }
       if (propName === 'type' && this[propName] === 'question') {
         this.icon = 'question';
-        console.log(this.icon);
-        console.log('question');
       }
     });
   }
@@ -58,6 +57,11 @@ export class LearningCard extends LitElement {
     if (super.firstUpdated) {
       super.firstUpdated(changedProperties);
     }
+    this.shadowRoot
+      .querySelector('img')
+      .addEventListener('click', this.toggleContent.bind(this));
+    // this.height = this.shadowRoot.querySelector('.hidden').clientHeight;
+    // this.shadowRoot.querySelector('.visible').style.height = this.height;
   }
 
   // HTMLElement life-cycle, element has been connected to the page / added or moved
@@ -77,19 +81,54 @@ export class LearningCard extends LitElement {
     return css`
       :host {
         display: block;
+        min-width: 20em;
       }
+
       /* this is how you match something on the tag itself like <learning-card type="math"> and then style the img inside */
       :host([type='math']) img {
         background-color: purple;
       }
+
       img {
         display: inline-flex;
         height: var(--learning-card-height, 100px);
         width: var(--learning-card-width, 100px);
-        background-color: green;
-      },
+      }
 
+      .rotate {
+        transition: transform 0.5s ease-in;
+      }
+
+      .hidden {
+        transform: scale(0) translateY(-100%);
+        min-height: 40px;
+        max-height: 40px;
+        transition: transform 0.5s ease-in, max-height 0.5s ease-in;
+      }
+
+      .visible {
+        overflow: hidden;
+        transform: scale(100%) translateY(-100%);
+        min-height: 40px;
+        max-height: 1000px;
+        transition: max-height 0.5s ease-in, transform 0.5s ease-in;
+      }
     `;
+  }
+
+  toggleContent() {
+    const img = this.shadowRoot.querySelector('img');
+    if (this.visible) {
+      const slot = this.shadowRoot.querySelector('.visible');
+      // console.log(slot.clientHeight);
+      img.style.transform = 'rotate(0deg)';
+      slot.className = 'hidden';
+    } else {
+      const slot = this.shadowRoot.querySelector('.hidden');
+      img.style.transform = 'rotate(90deg)';
+      slot.className = 'visible';
+    }
+    this.visible = !this.visible;
   }
 
   // HTML - specific to Lit
@@ -112,8 +151,19 @@ export class LearningCard extends LitElement {
             <slot name="subheader"></slot>
           </h2>
         </card-header>
-        <div slot="content" style="margin-left: 5em; margin-right: 5em;">
-          <slot></slot>
+        <div
+          slot="content"
+          style="margin-right: 5em; min-height: 40px; display: flex;"
+        >
+          <img
+            src="${this.arrow}"
+            class="rotate"
+            alt="Dropdown arrow"
+            style="max-height: 40px; max-width: 40px; rotation: 90deg; display: inline-flex;"
+          />
+          <div class="hidden">
+            <slot></slot>
+          </div>
         </div>
       </card-frame>
     `;
