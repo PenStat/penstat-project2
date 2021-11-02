@@ -170,5 +170,11 @@ These are dedicated status check-ins as this is a multi-week project
 - Functional multi-slot
 - Icon as an icon alone
 ### Check-in 4
--
--
+- All Elements are working
+- We have some fancy graphics now with hidable content.
+- We still need to meet some of the requirements with the demos
+- Testing is built out and fully covered main component. Need to create tests for other components
+- Storybook needs a lot of work.
+- Storybook hasn't been started (that I know of)
+- Displaying button with demo needs to happen still.
+- We also need to double check our issue queue to make sure we covered the other groups' suggestions

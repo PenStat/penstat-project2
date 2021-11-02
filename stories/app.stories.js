@@ -5,22 +5,44 @@ export default {
   title: 'Project two',
   component: 'learning-card',
   argTypes: {
-    type: { control: 'text' },
+    type: { 
+      control: 'radio',
+      options: ['science', 'objective', 'question']
+    },
   },
 };
 
 
-function Template({ type = "math", slot }) {
+function Template({ type = "math", headingSlot, subheadingSlot, slot }) {
   return html`
     <learning-card type="${type}">
+    <div slot="header">${headingSlot}</div>
+    <div slot="subheader">${subheadingSlot}</div>
     ${slot}
     </learning-card>
   `;
 }
-export const Card = Template.bind({});
 
 export const ScienceCard = Template.bind({});
 ScienceCard.args = {
   type: 'science',
-  slot: html`<p>slotted content that should render</p>`
-};
+  headingSlot: html`<span>Unit 1</span>`,
+  subheadingSlot: html`<span>Chem Connection</span>`,
+  slot: html`<ul><li>One</li><li>Two</li></ul>`
+}
+
+export const ObjectiveCard = Template.bind({});
+ObjectiveCard.args = {
+  type: 'objective',
+  headingSlot: html`<span>Unit 1</span>`,
+  subheadingSlot: html`<span>Learning Objectives</span>`,
+  slot: html`<ul><li>One</li><li>Two</li></ul>`
+}
+
+export const QuestionCard = Template.bind({});
+QuestionCard.args = {
+  type: 'question',
+  headingSlot: html`<span>Unit 1</span>`,
+  subheadingSlot: html`<span>Did You Know?</span>`,
+  slot: html`<ul><li>One</li><li>Two</li></ul>`
+}
