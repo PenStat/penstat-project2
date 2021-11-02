@@ -19,8 +19,8 @@ export class LearningCard extends LitElement {
     this.arrow = arrow;
     this.visible = false;
     // this.height = 100;
-    // this.heading = 'Unit 1';
-    // this.subheading = 'Learning Objectives';
+    this.heading = '';
+    this.subheading = '';
     setTimeout(() => {
       import('./CardHeader.js');
       import('./CardIcon.js');
@@ -32,6 +32,8 @@ export class LearningCard extends LitElement {
     return {
       // reflect allows state changes to the element's property to be leveraged in CSS selectors
       type: { type: String, reflect: true },
+      heading: { type: String },
+      subheading: { type: String },
     };
   }
 
@@ -141,14 +143,14 @@ export class LearningCard extends LitElement {
             aria-label="Main header"
             style="font-family: 'Open Sans', sans-serif; font-weight: 300;"
           >
-            <slot name="header"></slot>
+            <slot name="header">${this.heading}</slot>
           </h1>
           <h2
             slot="subheader"
             aria-label="Sub Header"
             style='font-family: "Open Sans", sans-serif; font-weight: 500;'
           >
-            <slot name="subheader"></slot>
+            <slot name="subheader">${this.subheading}</slot>
           </h2>
         </card-header>
         <div
@@ -182,7 +184,7 @@ export class LearningCard extends LitElement {
       contentEditable: true,
       gizmo: {
         title: 'Learning Card',
-        description: 'An element that you have to replace / fix / improve',
+        description: 'An element for displaying headings for classes in cards',
         icon: 'credit-card',
         color: 'blue',
         groups: ['Content', 'Presentation', 'Education'],
@@ -192,12 +194,25 @@ export class LearningCard extends LitElement {
           {
             property: 'type',
             title: 'Type',
-            description: 'Identifies the card',
+            description: 'Changes the type of the card',
             inputMethod: 'select',
             options: {
               science: 'Science',
-              math: 'Math',
+              objective: 'Objective',
+              question: 'Question',
             },
+          },
+          {
+            property: 'heading',
+            title: 'Heading',
+            description: 'Heading for the card',
+            inputMethod: 'textfield',
+          },
+          {
+            property: 'subheading',
+            title: 'Sub-heading',
+            description: 'Sub-heading for the card',
+            inputMethod: 'textfield',
           },
         ],
         advanced: [],
@@ -208,6 +223,7 @@ export class LearningCard extends LitElement {
           properties: {
             type: 'science',
           },
+          content: '<Your card content goes here>',
         },
       ],
     };
