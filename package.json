@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "@lrnwebcomponents/simple-colors": "^4.0.1",
-    "lit": "^2.0.0"
+    "lit": "^2.0.0",
+    "lit-html": "^2.0.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.15.6",
