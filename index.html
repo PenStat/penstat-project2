@@ -67,7 +67,16 @@
       <span slot="subheader">CHEM CONNECTION</span>
       <ul>
         <li>Describe the subatomic particles that make up an atom.</li>
-        <li>Use the periodic table to determine the numbers of protons and electrons in a neutral (uncharged) atom.</li>
+        <li>Use the periodic table to determine the numbers of protons and electrons in a neutral (uncharged) atom.
+          <penguin-state-button
+            link-target='https://wikipedia.com'
+            text='Learn More'
+            text-color='#ffffaa'
+            background-color='transparent'
+            tts="To Wikipedia!"
+          >
+          </penguin-state-button>
+        </li>
       </ul>
     </learning-card>
     <br>
@@ -80,8 +89,8 @@
   <script type="module">
     import "./src/app.js";
     import "./src/CardFrame.js";
-    import 'penguin-button/penguin-button.js';
-    import 'penguin-state-button/penguin-state-button.js';
+    import '@penstat2/penguin-button/penguin-button.js';
+    import '@penstat2/penguin-state-button/penguin-state-button.js';
   </script>
 </body>
 
