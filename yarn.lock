@@ -5552,7 +5552,7 @@
   "resolved" "https://registry.npmjs.org/lit-html/-/lit-html-1.4.1.tgz"
   "version" "1.4.1"
 
-"lit-html@^2.0.0":
+"lit-html@^2.0.0", "lit-html@^2.0.1":
   "integrity" "sha512-KF5znvFdXbxTYM/GjpdOOnMsjgRcFGusTnB54ixnCTya5zUR0XqrDRj29ybuLS+jLXv1jji6Y8+g4W7WP8uL4w=="
   "resolved" "https://registry.npmjs.org/lit-html/-/lit-html-2.0.1.tgz"
   "version" "2.0.1"
