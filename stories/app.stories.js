@@ -34,6 +34,7 @@ ScienceCard.args = {
   headingSlot: html`<span>Unit 1</span>`,
   subheadingSlot: html`<span>Chem Connection</span>`,
   slot: html`<ul>
+    <p>Body Text</p>
     <li>One</li>
     <li>Two</li>
   </ul>`,
