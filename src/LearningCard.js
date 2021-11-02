@@ -223,7 +223,7 @@ export class LearningCard extends LitElement {
           properties: {
             type: 'science',
           },
-          content: '<Your card content goes here>',
+          content: '-Your card content goes here-',
         },
       ],
     };
