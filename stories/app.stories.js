@@ -15,6 +15,9 @@ export default {
     subheadingSlot: {
       control: 'text',
     },
+    slot: {
+      control: 'text',
+    },
   },
 };
 
