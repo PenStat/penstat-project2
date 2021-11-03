@@ -85,11 +85,66 @@
       <span slot="subheader">DID YOU KNOW?</span>
       <p>There is about 0.4 pounds or 200 grams of salt (NaCl) in the average adult human body.</p>
     </learning-card>
+    <br><br><br><h1>Separate Implementations</h1><br>
+    <h2>Icon</h2>
+    <card-icon
+      type="science"
+      style="width: 100px; margin-top: .5em; display: flow; background-color: black;"
+    ></card-icon>
+    <br>
+    <h2>Header</h2>
+    <card-header slot="banner" type="science">
+      <h1
+        slot="header"
+        aria-label="Main header"
+        style="font-family: 'Open Sans', sans-serif; font-weight: 300;"
+      >
+        <slot name="header">UNIT 1</slot>
+      </h1>
+      <h2
+        slot="subheader"
+        aria-label="Sub Header"
+        style='font-family: "Open Sans", sans-serif; font-weight: 500;'
+      >
+        <slot name="subheader">CHEM CONNECTION</slot>
+      </h2>
+    </card-header>
+    <br>
+    <h2>Frame</h2>
+    <card-frame>
+      <card-header slot="banner" type="science">
+        <h1
+          slot="header"
+          aria-label="Main header"
+          style="font-family: 'Open Sans', sans-serif; font-weight: 300;"
+        >
+          <slot name="header">UNIT 1</slot>
+        </h1>
+        <h2
+          slot="subheader"
+          aria-label="Sub Header"
+          style='font-family: "Open Sans", sans-serif; font-weight: 500;'
+        >
+          <slot name="subheader">SCIENCE STUFF</slot>
+        </h2>
+      </card-header>
+      <br>
+      <h2>Toggle Content</h2>
+      <toggle-content
+        slot="content"
+      >
+        <p>WE HAVE CONTENT</p>
+      </toggle-content>
+    </card-frame>
+    <br>
+    <h2>Toggle Content</h2>
+    <toggle-content>
+      WE HAVE TOGGLED CONTENT
+    </toggle-content>
   </div>
   <script type="module">
     import "./src/app.js";
     import "./src/CardFrame.js";
-    import '@penstat2/penguin-button/penguin-button.js';
     import '@penstat2/penguin-state-button/penguin-state-button.js';
   </script>
 </body>

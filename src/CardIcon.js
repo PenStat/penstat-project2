@@ -36,8 +36,6 @@ export class CardIcon extends SimpleColors {
     };
   }
 
-  // updated fires every time a property defined above changes
-  // this allows you to react to variables changing and use javascript to perform logic
   updated(changedProperties) {
     super.updated(changedProperties);
     changedProperties.forEach((oldValue, propName) => {
@@ -64,19 +62,10 @@ export class CardIcon extends SimpleColors {
     }
   }
 
-  // HTMLElement life-cycle, element has been connected to the page / added or moved
-  // this fires EVERY time the element is moved
-  connectedCallback() {
-    super.connectedCallback();
-  }
-
-  // HTMLElement life-cycle, element has been removed from the page OR moved
-  // this fires every time the element moves
   disconnectedCallback() {
     super.disconnectedCallback();
   }
 
-  // CSS - specific to Lit
   static get styles() {
     return [
       ...super.styles,
