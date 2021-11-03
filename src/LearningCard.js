@@ -106,10 +106,7 @@ export class LearningCard extends LitElement {
             <slot name="subheader">${this.subheading}</slot>
           </h2>
         </card-header>
-        <toggle-content
-          style="margin-right: 5em; min-height: 40px; display: flex;"
-          slot="content"
-        >
+        <toggle-content slot="content">
           <slot></slot>
         </toggle-content>
       </card-frame>
