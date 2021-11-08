@@ -5,10 +5,6 @@ export class CardFrame extends LitElement {
     return 'card-frame';
   }
 
-  static get properties() {
-    return {};
-  }
-
   static get styles() {
     return css`
       :host {
