@@ -18,28 +18,11 @@ export class ToggleContent extends LitElement {
     this.visible = false;
   }
 
-  // properties that you wish to use as data in HTML, CSS, and the updated life-cycle
   static get properties() {
     return {
-      // reflect allows state changes to the element's property to be leveraged in CSS selectors
+      visible: { type: Boolean, reflect: true },
     };
   }
-
-  // updated fires every time a property defined above changes
-  // this allows you to react to variables changing and use javascript to perform logic
-  // updated(changedProperties) {
-  //   changedProperties.forEach((oldValue, propName) => {
-  //     if (propName === 'type' && this[propName] === 'objective') {
-  //       this.icon = 'lightbulb';
-  //     }
-  //     if (propName === 'type' && this[propName] === 'science') {
-  //       this.icon = 'beaker';
-  //     }
-  //     if (propName === 'type' && this[propName] === 'question') {
-  //       this.icon = 'question';
-  //     }
-  //   });
-  // }
 
   // Lit life-cycle; this fires the 1st time the element is rendered on the screen
   // this is a sign it is safe to make calls to this.shadowRoot
@@ -48,22 +31,8 @@ export class ToggleContent extends LitElement {
       super.firstUpdated(changedProperties);
     }
     this.shadowRoot
-      .querySelector('img')
+      .querySelector('button')
       .addEventListener('click', this.toggleContent.bind(this));
-    // this.height = this.shadowRoot.querySelector('.hidden').clientHeight;
-    // this.shadowRoot.querySelector('.visible').style.height = this.height;
-  }
-
-  // HTMLElement life-cycle, element has been connected to the page / added or moved
-  // this fires EVERY time the element is moved
-  connectedCallback() {
-    super.connectedCallback();
-  }
-
-  // HTMLElement life-cycle, element has been removed from the page OR moved
-  // this fires every time the element moves
-  disconnectedCallback() {
-    super.disconnectedCallback();
   }
 
   // CSS - specific to Lit
@@ -98,34 +67,47 @@ export class ToggleContent extends LitElement {
         max-height: 1000px;
         transition: max-height 0.5s ease-in, transform 0.5s ease-in;
       }
+      button {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        margin: 0;
+      }
     `;
   }
 
+  updated(changedProperties) {
+    changedProperties.forEach((oldValue, propName) => {
+      if (propName === 'visible' && this.shadowRoot) {
+        const img = this.shadowRoot.querySelector('img');
+        const slotwrap = this.shadowRoot.querySelector('#slotwrap');
+        if (this[propName]) {
+          img.style.transform = 'rotate(0deg)';
+          slotwrap.className = 'hidden';
+        } else {
+          img.style.transform = 'rotate(90deg)';
+          slotwrap.className = 'visible';
+        }
+      }
+    });
+  }
+
   toggleContent() {
-    const img = this.shadowRoot.querySelector('img');
-    if (this.visible) {
-      const slot = this.shadowRoot.querySelector('.visible');
-      // console.log(slot.clientHeight);
-      img.style.transform = 'rotate(0deg)';
-      slot.className = 'hidden';
-    } else {
-      const slot = this.shadowRoot.querySelector('.hidden');
-      img.style.transform = 'rotate(90deg)';
-      slot.className = 'visible';
-    }
     this.visible = !this.visible;
   }
 
   // HTML - specific to Lit
   render() {
     return html`
-      <img
-        src="${this.arrow}"
-        class="rotate"
-        alt="Dropdown arrow"
-        style="max-height: 40px; max-width: 40px; rotation: 90deg; display: inline-flex;"
-      />
-      <div class="hidden">
+      <button title="Click to toggle content">
+        <img
+          src="${this.arrow}"
+          class="rotate"
+          alt=""
+          style="max-height: 40px; max-width: 40px; rotation: 90deg; display: inline-flex;"
+        />
+      </button>
+      <div id="slotwrap" class="hidden">
         <slot></slot>
       </div>
     `;
